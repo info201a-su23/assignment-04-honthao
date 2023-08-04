@@ -3,9 +3,18 @@ title: "A3: Incarceration"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# source all R files to use in this index.Rmd file.
+source('summary.R')
+```
+
 ### Introduction
 
 An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+
+Variables: race, gender, region
 
 ### Summary Information
 
@@ -49,6 +58,9 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ``````{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
+Idea: A line graph showing how prison population for different racial groups
+changed over time.
+
 ### Variable Comparison Chart
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
@@ -59,6 +71,8 @@ The second chart that you will create and include will show how two different (c
 - The chart needs a clear title 
 - If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
 
+Idea: A scatter plot showing the percentages of female vs male in prison.
+
 ### Map
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
@@ -68,4 +82,7 @@ The last chart that you will create and include will show how a variable is dist
 - Your map needs a title
 - Your color scale needs a legend with a clear label
 - Use a map based coordinate system to set the aspect ratio of your map
+
+Idea: A map of how the race/gender that is the most likely to be incarcerated
+is distributed across the country (or maybe only Washington).
 
