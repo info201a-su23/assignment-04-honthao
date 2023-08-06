@@ -45,7 +45,7 @@ pop_map <- ggplot(data = state_jail_pop_shape) +
     high = "red",
   ) +
   labs(
-    title = "Black Incarceration Rate in the USA 1990-2018",
-    fill = "Jail Incarceration Rate"
+    title = "Black Jail Incarceration Rate in the USA 1990-2018",
+    fill = "Incarceration Rate"
   ) +
   coord_map()
