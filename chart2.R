@@ -1,3 +1,5 @@
+# VARIABLE COMPARISON CHART
+
 # Load packages
 library("dplyr")
 library("ggplot2")
@@ -13,7 +15,7 @@ gender_pct <- us_jail %>%
   summarize(
     female_pct = sum(female_jail_pop, na.rm = TRUE) /
       sum(female_pop_15to64, na.rm = TRUE) * 100,
-    male_pct = sum(male_jail_pop, na.rm = TRUE) / 
+    male_pct = sum(male_jail_pop, na.rm = TRUE) /
       sum(male_pop_15to64, na.rm = TRUE) * 100
   )
 

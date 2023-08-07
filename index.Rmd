@@ -1,5 +1,7 @@
 ---
 title: "A3: Incarceration"
+author: "Thao-Nguyen Ho"
+date: "8/6/2023"
 output: html_document
 ---
 
@@ -9,9 +11,24 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+Incarceration is a big problem in the U.S. and negatively impacts communities,
+especially minorities. Understanding this issue can help design better policies
+to reduce incarceration rates across the country and break down the racial and
+gender disparities embedded in this issue. To explore patterns of incarceration
+in the U.S., I’ll be looking at this [dataset about jail population per county/state](https://github.com/melaniewalsh/Neat-Datasets/blob/main/us-jail-pop.csv?raw=true). Due to having a lot of missing values in the years before 1990, I’ll only
+focus on data that are recorded from 1990 to 2018, specifically for the
+population aged 15 to 64 as this group is the most likely to be incarcerated.
 
-Variables: race, gender, region
+The measure of incarceration I’ll be focusing on is the incarceration percentage
+of a particular group population. One of the variables I’ll be analyzing is race
+because I’m interested in seeing how racial disparities have changed over time
+and which groups have higher or increasing rates of incarceration. Another
+variable I’ll be looking at is gender, specifically the relationship between 
+males' and females' jail incarceration rate, to better understand how gender
+differences and biases can affect the incarceration rate. Lastly, I’ll be
+examining the incarceration of the most affected group across different states
+of the U.S. to discover any geographical clusters and factors that can 
+contribute to the inequalities in the criminal justice system.
 
 ### Summary Information
 
@@ -19,16 +36,72 @@ Variables: race, gender, region
 source("summary.R")
 ```
 
+In the most recent year recorded, 2018, there was an average of `r avg_pop`
+people per state that are in jail in the U.S., with the median at `r median_pop`
+people. From 1990 to 2018, the group with the highest incarceration rate is
+Black, such that on average, `r max_rate`% of the Black population is in jail.
+While AAPI people has the lowest incarceration rate of `r min_rate`%. My
+analysis also showed that approximately `r male_mean_pct`% of male population
+are in jail each year. Compared to `r female_mean_pct`% of female population
+that are in jail, males are `r gender_ratio` times more likely to get
+incarcerated. Further analyzing shows that the state with the highest percentage
+of its Black population in jail is `r max_pct_state`. Due to missing data for
+some states, some states has 0% of its Black population in jail but this is
+inaccurate and need further analysis from other datasets.
+
 ### The Dataset
 
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+Who collected the data?
+
+- The data was collected by the [Vera Institute](https://github.com/vera-institute/incarceration-trends)
+
+How was the data collected or generated?
+
+- From the [Codebook](https://github.com/vera-institute/incarceration-trends/blob/master/incarceration_trends-Codebook.pdf), the data was collected from datasets provided by
+the U.S. Department of Justice Bureau of Justice Statistics (BJS), the Deaths
+in Custody Reporting Program (DCRP), and the Annual Survey of Jails.
+
+Why was the data collected?
+
+- The data was collected to document and inform the public of mass incarceration
+in the U.S. It can be used by others as a tool to understand who and how many
+are in jails/prisons and to analyze patterns that can reveal the disparities in
+the criminal justice system.
+
+How many observations (rows) are in your data?
+
+- There are 153811 observations (rows) in the dataset.
+
+How many features (columns) are in the data?
+
+- There are 28 features (columns) in the dataset.
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data?
+
+- When working with this data, some ethical questions I need to consider are
+related to the privacy of the individuals. These questions include what kinds of
+information are collected from each individual and how this information is
+stored, and whether the participants are aware of this whole process. Because
+the values presented in this data are mostly numbers, how can we make sure that
+they are not over or under estimate for certain gender or racial groups, and
+whether there’re biases presented in the data. 
+
 What are possible limitations or problems with this data?   (at least 200 words)
 
+- A possible problem with this dataset is its reliability and usefulness because
+of how many missing values are in the data. This can skew our results and lead
+to inaccurate analysis. Missing values can also lead to a group being
+underrepresented in the data. For example from the summary given above, because
+there were no incarceration data recorded for some states, they seem to be
+having the lowest incarcerated population, but this interpretation is
+inaccurate. To avoid working with too many missing values, we can try to collect
+those values ourselves or focus only on a subset or section of data that has
+sufficient values to work with. A possible limitation with this data is how much
+details it can provide because it might not have sufficient features to draw
+meaningful correlations from. Because factors like the reasons people got
+incarcerated can have a big influence on the increasing or decreasing of
+incarceration rate for certain gender and racial groups. But this can be hard to
+collect and store on a large scale. 
 
 ### Trends Over Time Chart
 

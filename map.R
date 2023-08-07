@@ -1,3 +1,5 @@
+# MAP
+
 # Load packages
 library("dplyr")
 library("ggplot2")
@@ -36,11 +38,13 @@ jail_state_pct_shape <- left_join(
 
 # Plot Black incarceration % geographically
 pop_map <- ggplot(data = jail_state_pct_shape) +
-  geom_polygon(mapping = aes(
-    x = long,
-    y = lat,
-    group = group,
-    fill = pct_in_jail)
+  geom_polygon(
+    mapping = aes(
+      x = long,
+      y = lat,
+      group = group,
+      fill = pct_in_jail
+    )
   ) +
   scale_fill_continuous(
     low = "grey",
