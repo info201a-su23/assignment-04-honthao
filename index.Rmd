@@ -37,11 +37,38 @@ source("chart1.R")
 plot(line_chart)
 ```
 
-This chart visualizes...
+This chart visualizes the jail incarceration percentage of different racial
+groups from the age of 15 to 64 in the U.S. 1990-2018. A racial group’s
+percentage represents the percentage of people in jail in relation to that
+group's total population.
 
 #### Purpose
 
+By comparing the jail incarceration percentage over time of different racial
+groups, this chart seeks to express the trends of the incarcerated population
+and which group has the highest incarceration rates. The chart allows us to see
+which year there was a sudden spike in the incarceration rate and allows for
+further analysis of the racial disparities in the criminal justice system.
+Understanding these patterns can provide insights into creating programs that
+help lower the incarceration rates of the most affected groups.
+
 #### Patterns
+
+- From 1990 to 2018, **Black** people have the **highest** jail incarceration
+percentage. The group reached the highest rate at around **2006**, during
+which **1.15%** of its population are in jail. While **AAPI** people have the
+**lowest** jail incarceration percentage.
+  - White people have the second lowest trend and before the year 2000, Latinx
+  people were the second highest followed by Native people but their spot got
+  switched from 2000 and onward.
+- **Black, Latinx, and AAPI** groups all have a **decreasing** trend in the
+percentage of their people in jail after 2008. While we can see an 
+**increasing** trend for **Native and White** groups.
+  - This might be the result of different reforms happening during that period
+  and an increase in programs for reducing crimes. But more focus needs to be
+  put on Native people to help reduce or keep their jail incarceration
+  percentage from rising higher. 
+
 
 ### Variable Comparison Chart
 
@@ -50,11 +77,34 @@ source("chart2.R")
 plot(scatter_chart)
 ```
 
-This chart visualizes...
+This chart visualizes the relationship between males' and females' jail
+incarceration percentages from the age of 15 to 64 in the U.S. 1990-2018. A
+gender’s percentage represents the percentage of people in jail in relation to
+that gender’s total population. 
 
 #### Purpose
 
+By showing the correlation between males' and females' incarceration
+percentages, this chart seeks to show how these two variables are related to one
+another and the direction that they both are going over the years. It allows us
+to see which gender is increasing or decreasing at a faster rate and whether
+this affect the outcome of the other gender. Understanding these patterns can
+help make changes to policies that better fit the needs of both groups and
+explore gender biases in the criminal justice system.
+
 #### Patterns
+
+- At the **highest** incarceration percentage, approximately **0.672% of total**
+**male population** are in jail while only **0.098% of females**. Males are
+**7 times** more likely than females to be incarcerated.
+- There is a **positive** correlation between males' and females' jail
+incarceration rates except for some outliers in the most recent years.
+  - In the most recent year, female incarceration percentage seems to stay the
+  same at its highest while male incarceration percentage had a slight drop from
+  its highest to around 0.58%.
+  - This might indicate that policy changes to help bring down incarceration
+  rates didn’t take females into account, which may be because they don’t
+  represent the majority of jail population.
 
 ### Map
 
@@ -63,9 +113,28 @@ source("map.R")
 plot(pop_map)
 ```
 
-This chart visualizes...
+This chart visualizes the jail incarceration percentage of the Black population
+from the age of 15 to 64 in 2018 across different states of the U.S. 
 
 #### Purpose
 
+By showing how the Black jail incarceration percentage varies geographically,
+this chart seeks to show which state has the highest percentage of its Black
+population incarcerated and which one has the lowest. It allows us to see
+whether there’re patterns across the different states, like geographical
+clusters of Black incarceration, and to question and explore why such patterns
+exist.
+
 #### Patterns
+
+- Some states like **Connecticut, Delaware, and Vermont** have **0%** of their
+Black population incarcerated, indicating that there are missing data for these
+states. 
+  - Alaska and Hawaii are missing from the map due to limited technical skills.
+- **Wyoming** is the state with the **highest** Black jail incarceration
+percentage, in which **2.43%** of its Black population from the age of 15 to 64
+are in jail in 2018.
+  - The states around Wyoming also have a high percentage. More context about
+  each state needs to be explored to understand why these states have high Black
+  incarceration percentages.
 

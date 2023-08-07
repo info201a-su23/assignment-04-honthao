@@ -6,7 +6,7 @@ library("ggplot2")
 us_jail <- read.csv("https://github.com/melaniewalsh/Neat-Datasets/blob/main/us-jail-pop.csv?raw=true",
                     stringsAsFactors = FALSE)
 
-# Compute the incarceration rate per year for different racial groups
+# Compute the incarceration % per year for different racial groups 15-64
 jail_pop <- us_jail %>%
   filter(year >= 1990) %>%
   group_by(year) %>%
@@ -24,14 +24,14 @@ jail_pop <- us_jail %>%
   )
 
 # Plot the data using line graph
-line_chart <- ggplot(data = jail_pop, aes(x = year)) +
-  geom_line(mapping = aes(y = aapi_pct, color = "AAPI")) +
-  geom_line(mapping = aes(y = black_pct, color = "Black")) +
-  geom_line(mapping = aes(y = latinx_pct, color = "Latinx")) +
-  geom_line(mapping = aes(y = native_pct, color = "Native")) +
-  geom_line(mapping = aes(y = white_pct, color = "White")) +
+line_chart <- ggplot(data = jail_pop) +
+  geom_line(mapping = aes(x = year, y = aapi_pct, color = "AAPI")) +
+  geom_line(mapping = aes(x = year, y = black_pct, color = "Black")) +
+  geom_line(mapping = aes(x = year, y = latinx_pct, color = "Latinx")) +
+  geom_line(mapping = aes(x = year, y = native_pct, color = "Native")) +
+  geom_line(mapping = aes(x = year, y = white_pct, color = "White")) +
   labs(
-    title = "Jail Incarceration Percentage 1990-2018",
+    title = "Jail Incarceration Percentage of Different Race Age 15-64, 1990-2018",
     x = "Year",
     y = "Jail Incarceration Percentage",
   ) +
